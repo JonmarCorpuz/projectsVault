@@ -2,8 +2,6 @@
 
 ![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/topologie.png)
 
-* Each service was installed on it's own virtual Ubuntu Server
-
 <br>
 
 # Technology Stack
