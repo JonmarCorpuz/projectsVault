@@ -136,6 +136,32 @@ sudo systemctl start zabbix-agent
 
 <br>
 
+## Zabbix Agent on Windows
+
+<br>
+
+1. Install the Zabbix agent for Windows [here](https://www.zabbix.com/download_agents)
+
+<br>
+
+2. Execute the executable
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/windows-zabbix-agent1.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/windows-zabbix-agent2.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/windows-zabbix-agent3.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/windows-zabbix-agent4.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/windows-zabbix-agent5.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/windows-zabbix-agent6.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/windows-zabbix-agent7.png)
+
+<br>
+
 ## SNMP
 
 1. Configure SNMP on Cisco switches and routers
@@ -146,6 +172,8 @@ snmp-server host ZABBIX2_IP_ADDRESS version 2c MyCommunity
 snmp-server location LOCATION
 snmp-server contact CONTACT_EMAIL
 ```
+
+<br>
 
 # Verify Zabbix Server Configuration
 
