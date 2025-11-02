@@ -56,9 +56,35 @@ sudo systemctl start zabbix-server
 
 <br>
 
+6. Continue the installation from a web browser by visiting `http://localhost/zabbix`
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-36-34_Installation.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-36-49_Installation.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-37-04_Installation.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-37-12_Installation.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-37-17_Installation.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-37-22_Installation.png)
+
+7. Login to the Zabbix web UI
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-37-34_zabbix1_Zabbix.png)
+
+![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-37-40_zabbix1_Tableau_de_bord.png)
+
 # Verify Zabbix Server Configuration
 
 Verify Zabbix server is running
 ```Bash
 sudo systemctl status zabbix-server
 ```
+
+<br>
+
+# Documentation
+
+* [Download and Install Zabbix Server](https://www.zabbix.com/download?zabbix=5.2&os_distribution=ubuntu)
