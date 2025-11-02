@@ -70,11 +70,11 @@ sudo systemctl start zabbix-server
 
 ![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-37-22_Installation.png)
 
-7. Login to the Zabbix web UI
-
 ![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-37-34_zabbix1_Zabbix.png)
 
 ![](https://github.com/JonmarCorpuz/projectsDump/blob/main/%5BOnPrem%5D%20RedundantZabbix/Images/Screenshot_2025-10-30_at_19-37-40_zabbix1_Tableau_de_bord.png)
+
+<br>
 
 # Verify Zabbix Server Configuration
 
