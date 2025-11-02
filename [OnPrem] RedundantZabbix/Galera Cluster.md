@@ -184,6 +184,8 @@ Show the cluster UUID
 sudo mysql -u root -p -e "SHOW STATUS LIKE 'wsrep_cluster_state_uuid';"
 ```
 
+<br>
+
 Show the cluster's name
 ```SQL
 mysql -u root -p -e "SHOW VARIABLES LIKE 'wsrep_cluster_name';"
