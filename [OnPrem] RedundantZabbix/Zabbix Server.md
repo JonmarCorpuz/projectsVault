@@ -42,3 +42,14 @@ StatsAllowedIP=127.0.0.1                              # Instruct to only allow s
 ########### ADDITIONAL PARAMETERS ###############
 Include=/etc/zabbix/zabbix_server.d/*.conf           # Include additional configuration files from this directory
 ```
+
+<br>
+
+5. Enable and start the Zabbix server
+```Bash
+# Enable the Zabbix server service to start automatically at boot
+sudo systemctl enable zabbix-server
+
+# Start the Zabbix server immediately
+sudo systemctl start zabbix-server
+```
