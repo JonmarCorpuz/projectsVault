@@ -12,3 +12,7 @@ sudo yum -y install terraform
 ```Bash
 terraform --version
 ```
+
+<br>
+
+# Deploy Infrastructure 
