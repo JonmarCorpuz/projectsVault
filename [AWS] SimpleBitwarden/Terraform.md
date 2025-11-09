@@ -88,69 +88,13 @@ resource "aws_route_table_association" "demo-public-route-association" {
 
 4. Define the security groups to assign to our EC2 instance
 ```Bash
-resource "aws_security_group" "allow_all" {
-  name        = "allow-all-traffic"
-  description = "Allow ALL egress and ingress traffic"
-  vpc_id      = aws_vpc.demo-network.id
-  ingress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-resource "aws_security_group" "allow_all_rdp" {
-  name        = "allow-all-rdp-traffic"
-  description = "Allow only RDP traffic from anywhere"
-  vpc_id      = aws_vpc.demo-network.id
-  ingress {
-    description = "RDP"
-    from_port   = 3389
-    to_port     = 3389
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-resource "aws_security_group" "allow_internal_ssh" {
-  name        = "allow-internal-ssh-traffic"
-  description = "Allow only internal SSH traffic"
-  vpc_id      = aws_vpc.demo-network.id
-  ingress {
-    description = "SSH"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["172.20.73.0/24"]
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-resource "aws_security_group" "allow_all_http" {
+resource "aws_security_group" "allow_all_https_traffic" {
   name        = "allow-all-http-traffic"
-  description = "Allow ALL HTTP traffic"
+  description = "Allow all HTTPS traffic"
   vpc_id      = aws_vpc.demo-network.id
   ingress {
-    from_port   = 80
-    to_port     = 80
+    from_port   = 443
+    to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -229,4 +173,19 @@ resource "aws_eip_association" "bitwarden-server-eip_assoc" {
 output "bitwarden-server-public-ip" {
   value = aws_eip.bitwarden-server-static-ip.public_ip
 }
+```
+
+<br>
+
+# Deploy the Infrastructure
+
+1. 
+```Bash
+terraform init
+```
+
+<br>
+
+```Bash
+terraform apply --auto-approve
 ```
