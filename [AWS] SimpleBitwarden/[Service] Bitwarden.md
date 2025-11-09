@@ -77,6 +77,55 @@ printf "$DOMAIN\n$USE_LETSENCRYPT\n$INSTALL_ID\n$INSTALL_KEY\n$REGION\n" | ./bit
 
 ```Bash
 variable "bitwarden-startup-script" {
+  type  = string
+  default = <<EOT
+#!/bin/bash
 
+#
+sudo apt -y update && sudo apt -y upgrade
+
+#
+sudo apt -y install ca-certificates curl gnupg lsb-release
+
+#
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+#
+sudo apt-get -y update && sudo apt-get -y install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+#
+sudo useradd -m -s /bin/bash bitwarden
+sudo usermod -aG docker,sudo bitwarden
+echo -e "YourSecurePassword\nYourSecurePassword" | sudo passwd bitwarden
+
+#
+sudo mkdir /opt/bitwarden
+sudo chmod -R 700 /opt/bitwarden
+sudo chown -R bitwarden:bitwarden /opt/bitwarden
+
+#
+sudo sh -c "echo 'ubuntu ALL=(bitwarden) NOPASSWD: ALL' >> /etc/sudoers"
+sudo -u bitwarden -i
+curl -Lso bitwarden.sh "https://func.bitwarden.com/api/dl/?app=self-host&platform=linux" && chmod 700 bitwarden.sh
+
+#
+DOMAIN="bitwarden.yourdomain.com"
+USE_LETSENCRYPT="y"
+EMAIL="demo@gmail.com"
+DATABASE_NAME="test"
+INSTALL_ID="your_installation_id"
+INSTALL_KEY="your_installation_key"
+REGION="US"
+
+#
+printf "$DOMAIN\n$USE_LETSENCRYPT\n$EMAIL\n$DATABASE_NAME\n$INSTALL_ID\n$INSTALL_KEY\n$REGION\n" | ./bitwarden.sh install
+
+#
+./bitwarden start
+
+EOT
 }
 ```
